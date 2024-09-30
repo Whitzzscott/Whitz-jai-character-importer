@@ -7,3 +7,7 @@
 3. Unzip the downloaded file.
 4. Navigate to **Extensions**.
 5. Drag and drop the unzipped folder into the directory.
+
+### Mobile version:
+
+Watch this guide: https://imgur.com/a/toVswY0 
