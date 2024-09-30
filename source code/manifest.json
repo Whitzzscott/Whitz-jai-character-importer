@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "Whitz jai Tool",
+    "version": "1.0.0",
+    "description": "A tool for getting jai character data.",
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_icon": {
+        "16": "icons/icon1.png"
+      }
+    },
+    "icons": {
+      "16": "icons/icon1.png",
+      "48": "icons/icon2.png",
+      "128": "icons/icon3.png"
+    },
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "*://janitorai.com/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["*://janitorai.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
