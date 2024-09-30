@@ -59,7 +59,8 @@ function setButtonEventListeners() {
       setLoadingState(false);
       return;
     }
-    downloadJsonData(data);
+    const sanitizedData = sanitizeData(data);
+    downloadJsonData(sanitizedData);
     setLoadingState(false);
     alert("Character data downloaded!");
   });
@@ -158,6 +159,22 @@ async function retrieveCharacter() {
       },
     );
   });
+}
+
+function sanitizeData(data) {
+  const cleanedData = {};
+  for (const key in data) {
+    if (typeof data[key] === 'string') {
+      cleanedData[key] = data[key]
+        .replace(/<p[^>]*>.*?<\/p>/g, '')
+        .replace(/<h1[^>]*>.*?<\/h1>/g, '')
+        .replace(/<a[^>]*href=["'][^"']*["'][^>]*>.*?<\/a>/g, '')
+        .replace(/<hr\s*\/?>/g, '');
+    } else {
+      cleanedData[key] = data[key];
+    }
+  }
+  return cleanedData;
 }
 
 initializeButton();
