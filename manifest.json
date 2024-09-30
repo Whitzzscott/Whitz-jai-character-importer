@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "JAI Tool",
+    "name": "Whitz jai Tool",
     "version": "1.0.0",
     "description": "A tool for getting jai character data.",
     "background": {
